@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body {
+	font-family: 'Lato';
+	font-size: 11pt;
+	background-color: #d9d9d9;
+}
+
+button, input, textarea, select {
+	font-family: 'Lato';
+	font-size: 10pt;
+}
+
+h1 {
+	text-align: center;
+}
+
+#main-container {
+	margin-left:auto; 
+    margin-right:auto;
+}
+
+table {
+	min-width: 700px;
+	height: 100%;
+}
+
+table table {
+	background-color: #e6e6e6;
+}
+
+button, #upload{
+	display: inline-block;
+	text-align: center;
+	border-radius: 3px;
+	margin-right: 5px;
+	padding: 10px;
+	border: none;
+	border-bottom: 3px solid #ccc;
+	min-width: 150px;
+	background-color: #f2f2f2;
+	-webkit-transition: 0.5s;
+    transition: 0.5s ease;
+}
+
+button:hover,  #upload:hover {
+	cursor: pointer;
+	border-bottom: 3px solid #555;
+}
+
+.header {
+	min-width: 80px;
+	width: 85px;
+	max-width: 90px;
+}
+
+input[type=file] {
+
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type=text], input[type=password], input[type=number], textarea {
+	border-radius: 3px;
+	padding: 5px;
+	border: none;
+	border-bottom: 3px solid #ccc;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 97%;
+	min-height: 20px;
+	-webkit-transition: 0.5s;
+    transition: 0.5s ease;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, textarea:focus {
+	border-bottom: 3px solid #555;
+}
+
+select {
+	border-radius: 3px;
+	margin-right: 5px;
+	padding: 10px;
+	border: none;
+	border-top: 3px solid #ccc;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	background-color: #f2f2f2;
+	-webkit-transition: 0.5s;
+    transition: 0.5s ease;
+}
+
+select:focus {
+	border-top: 3px solid #555;
+}

@@ -1,0 +1,22 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+var accounts = document.getElementById('accounts');
+var balance = document.getElementById('balance');
+var private = document.getElementById('private');
+var add = document.getElementById('add');
+var create = document.getElementById('create');
+var newAddress = document.getElementById('newAddress');
+var newPrivate = document.getElementById('newPrivate');
+var clear = document.getElementById('clear');
+var remove = document.getElementById('remove');
+var passEx = document.getElementById('passEx');
+var keyEx = document.getElementById('keyEx');
+var encrypt = document.getElementById('encrypt');
+var selectFiles = document.getElementById('selectFiles');
+var passIm = document.getElementById('passIm');
+var keyIm = document.getElementById('keyIm');
+var unlock = document.getElementById('unlock');
+var send = document.getElementById('send');
+var amount = document.getElementById('amount');
+var submit = document.getElementById('submit');
+var wallet;
+},{}]},{},[1]);

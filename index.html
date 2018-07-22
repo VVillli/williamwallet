@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+		<meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+		<link rel = "stylesheet" href = "./stylesheets/main.css"/>
+		<title>William Wallet</title>
+	</head>
+	<body>
+		<h1>William Wallet</h1>
+		<table id = "main-container">
+		<tr><td>
+		<table border = "1" cellpadding= "5px">
+			<tr>
+				<th class = "header">Account:</th>
+				<td><select id = "accounts"></select></td>
+			</tr>
+			<tr>
+				<th class = "header">Balance:</th>
+				<td id = "balance"></td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "right"><button id = "clear">Clear Wallet</button><button id = "remove">Remove Account</button></th>
+			</tr>
+		</table>
+		</td><td>
+		<table border = "1" cellpadding = "5">
+			<tr>
+				<th class = "header">Send To:</th>
+				<td>
+					<input spellcheck="false" id = "send" type = "text">
+				</td>
+			</tr>
+			<tr>
+				<th class = "header">Amount:</th>
+				<td><input id = "amount" type = "number"></td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "right"><button id = "submit">Send</button></td>
+			</tr>
+		</table>
+		</td></tr>
+		<tr><td>
+		<table id = "acc-create" border = "1" cellpadding = "5">
+			<tr>
+				<th colspan = "2">Create New Account</th>
+			</tr>
+			<tr>
+				<th class = "header">Address:</th>
+				<td id = "newAddress"></td>
+			</tr>
+			<tr>
+				<th class = "header">Private Key:</th>
+				<td id = "newPrivate"></td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "right"><button id = "create">Create Account</button></td>
+			</tr>
+		</table>
+		</td><td>
+		<table border = "1" cellpadding = "5">
+			<tr>
+				<th class = "header">Private Key:</th>
+				<td><input id = "private" type = "password"/></td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "right"><button id = "add">Import Account</button></td>
+			</tr>
+		</table>
+		</td></tr><tr><td>
+		<table border = "1" cellpadding = "5">
+			<tr>
+				<th class = "header">Passphrase:</th>
+				<td><input id = "passEx" type = "password"/></td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "right"><button id = "encrypt">Encrypt Wallet</button></td>
+			</tr>
+			<tr>
+				<td colspan = "2"><textarea style="resize:none"  spellcheck="false" readonly="readonly" id = "keyEx" rows = "7" cols = "33"></textarea></td>
+			</tr>
+		</table>
+		</td><td>
+		<table border = "1" cellpadding = "5">
+			<tr>
+				<th class = "header">Keystore:</th><td align = "right"><label id = "upload">Upload Keystore<input type="file" id="selectFiles"/></label></td>
+			</tr>
+			<tr>
+				<td colspan = "2"><textarea style="resize:none" spellcheck="false" id = "keyIm" rows = "4" cols = "50"></textarea></td>
+			</tr>
+			<tr>
+				<th class = "header">Passphrase:</th>
+				<td><input id = "passIm" type = "password"/></td>
+			</tr>
+			<tr>
+				<td colspan = "2" align = "right"><button id = "unlock">Import Wallet</button></th>
+			</tr>
+		</table>
+		</td></tr>
+		</table>
+		<script type = "text/javascript" src = "config-web.js"></script>
+		<script type = "text/javascript" src = "accounts-web.js"></script>
+		<script type = "text/javascript" src = "create-account-web.js"></script>
+		<script type = "text/javascript" src = "import-account-web.js"></script>
+		<script type = "text/javascript" src = "encrypt-web.js"></script>
+		<script type = "text/javascript" src = "decrypt-web.js"></script>
+		<script type = "text/javascript" src = "send-web.js"></script>
+	</body>
+</html>
