@@ -22,11 +22,67 @@ h1 {
 
 table {
 	min-width: 700px;
+	max-width: 700px;
 	height: 100%;
 }
 
 table table {
 	background-color: #e6e6e6;
+}
+
+div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+img {
+	display: block;
+	height: 20px;
+	width: auto;
+}
+
+a {
+	color: white;
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltiptext{
+	visibility: hidden;
+	width: 300px;
+	background-color: #555;
+	text-align: left;
+	color: white;
+	border-radius: 5px;
+	padding: 10px 15px;
+	position: absolute;
+	z-index: 1;
+	top: 125%;
+    left: 50%;
+    margin-left: -165px;
+    font-weight: normal;
+
+	transition: opacity 0.5s ease;
+	opacity: 0;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
 
 button, #upload{

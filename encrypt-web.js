@@ -23804,6 +23804,14 @@ const Web3 = require('web3');
 
 const web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/exi2EvSOpqviiSdzwI4O"));
 
+passEx.addEventListener('keyup', (e) => {
+	e.preventDefault();
+
+	if(e.keyCode == 13) {
+		encrypt.click();
+	}
+});
+
 encrypt.addEventListener('click', () => {
 	if(passEx.value == '') {
 		window.alert('Please enter a password');

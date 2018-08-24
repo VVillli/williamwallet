@@ -23804,6 +23804,14 @@ const Web3 = require('web3');
 
 const web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/exi2EvSOpqviiSdzwI4O"));
 
+private.addEventListener('keyup', (e) => {
+	e.preventDefault();
+
+	if(e.keyCode == 13) {
+		add.click();
+	}
+});
+
 add.addEventListener('click', () => {
 	if(private.value == '') {
 		window.alert('Please enter a private key');
@@ -23816,22 +23824,28 @@ add.addEventListener('click', () => {
 		return;
 	}
 
-	var added = wallet.add(private.value);
+	try {
+		var added = wallet.add(private.value);
 
-	console.log(added.address);
-	
-	accounts.options[accounts.options.length] = new Option(added.address, accounts.options.length);
+		console.log(added.address);
+		
+		accounts.options[accounts.options.length] = new Option(added.address, accounts.options.length);
 
-	web3.eth.getBalance(accounts.options[accounts.selectedIndex].text, (err, res) => {
-		if(err) {
-			return console.error(err);
-		}
+		web3.eth.getBalance(accounts.options[accounts.selectedIndex].text, (err, res) => {
+			if(err) {
+				return console.error(err);
+			}
 
-		var bal = web3.utils.fromWei(res, 'ether');
+			window.alert('Account successfully imported');
 
-		console.log(bal);
-		balance.innerHTML = bal + ' ETH'; 
-	});
+			var bal = web3.utils.fromWei(res, 'ether');
+
+			console.log(bal);
+			balance.innerHTML = bal + ' ETH'; 
+		});
+	} catch (error) {
+		window.alert('Error importing account! Check your private key.');
+	}
 
 
 	private.value = '';

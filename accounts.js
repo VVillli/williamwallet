@@ -7,7 +7,9 @@ console.log(web3.version);
 wallet = web3.eth.accounts.wallet;
 
 accounts.addEventListener('change', () => {
-	web3.eth.getBalance(accounts.options[accounts.selectedIndex].text, (err, res) => {
+	var currentAddress = accounts.options[accounts.selectedIndex].text;
+
+	web3.eth.getBalance(currentAddress, (err, res) => {
 		if(err) {
 			return console.error(err);
 		}
@@ -17,6 +19,53 @@ accounts.addEventListener('change', () => {
 		console.log(bal);
 		balance.innerHTML = bal + ' ETH'; 
 	});
+
+	/*web3.eth.getBlockNumber((err, curr) => {
+		if(err) {
+			return console.error(err);
+		}
+
+		var currentBlock = curr;
+
+		web3.eth.getTransactionCount(currentAddress, currentBlock, (err, transCount) => {
+			if(err) {
+				return console.error(err);
+			}
+
+			var count = transCount;
+
+			console.log(currentBlock + " " + count);
+
+			for(var i = currentBlock; i >= 0 && count > 0; i--) {
+				try {
+					console.log(i + " " + count);
+
+					web3.eth.getBlock(i, true, (err, block) => {
+						if(err) {
+							return console.error(err);
+						}
+
+						console.log(block);
+
+						if(block && block.transactions) {
+							block.transactions.forEach((res) => {
+								if(currentAddress == res.from && res.from != res.to) {
+									trans.innerHTML += "<tr><td>" + res.from + "</td><td>" + res.to + "</td><td>" + res.value.toString(10) + "</td></tr>";
+									count--;
+								}
+								if(currentAddress == res.to && res.from != res.to) {
+									trans.innerHTML += "<tr><td>" + res.from + "</td><td>" + res.to + "</td><td>" + res.value.toString(10) + "</td></tr>";
+									count--;
+								}
+							});
+						}
+					});
+				} catch (e) {
+					console.error("Error in block " + i, e);
+				}
+			}
+		});
+	});*/
 });
 
 clear.addEventListener('click', () => {

@@ -14,6 +14,7 @@ var selectFiles = document.getElementById('selectFiles');
 var passIm = document.getElementById('passIm');
 var keyIm = document.getElementById('keyIm');
 var unlock = document.getElementById('unlock');
+var trans = document.getElementById('trans');
 var send = document.getElementById('send');
 var amount = document.getElementById('amount');
 var submit = document.getElementById('submit');
